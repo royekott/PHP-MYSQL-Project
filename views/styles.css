@@ -1,0 +1,733 @@
+/* Css style for all theschool project except login.php */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    @import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #955251; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2a2423; 
+};
+
+.navbar-inverse {
+    background-color: #2a2423;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 999;
+    background-color: #2a2423;
+    border-color: transparent;
+    width: 101%;
+    margin-left: -3px;
+}
+
+.navbar-header {
+    height: 90px;
+}
+
+.navbar-right {
+    margin-top: 20px;
+    margin-right: 35px;
+    font-size: 17px;
+}
+
+#myNavbar {
+    text-align: center;
+    height: 200px;
+}
+
+.header_logo {
+    max-width: 180px;
+    max-height: 88px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 15%;
+}
+
+.header_logo:hover{
+    animation: pulse;
+    animation-duration: 0.4s;
+}
+
+.navbar-toggle .icon-bar {
+    color: black;
+}
+
+#mainRow {
+    position: absolute;
+    top: 89px;
+    bottom: 110px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.canvas {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 5;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: slideshow 75s linear 0s infinite;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.canvas:nth-child(2) {
+    z-index: 4;
+    animation: slideshow 75s linear 15s infinite;
+}
+
+.canvas:nth-child(3) {
+    z-index: 3;
+    animation: slideshow 75s linear 30s infinite;
+}
+
+.canvas:nth-child(4) {
+    z-index: 2;
+    animation: slideshow 75s linear 45s infinite;
+}
+
+.canvas:nth-child(5) {
+    z-index: 1;
+    animation: slideshow 75s linear 60s infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes slideshow {
+   25% { opacity: 1;}
+   33.33% { opacity: 0;} 
+   91.66% { opacity: 0;}
+   100% { opacity: 1;}
+}
+
+.course-div, .student-div, .administrator-div {
+    width: 100%;
+    z-index: 999;
+}
+
+.topContent {
+    height: 50px;
+}
+
+.topContent button {
+    margin-right: 15px;
+    transition: 0.3s;
+    float: left;
+}
+
+.topContent h3 {
+    transition: 0.3s;
+    display: inline;
+    margin-left: 15px;
+    color: lightgray;
+    font: bold 20px 'Cookie', cursive;
+}
+
+.topContent hr {
+    margin-top: 30px;
+}
+
+.topContent h3:hover{
+    color: #fff;
+    transition: 0.5s;
+}
+
+.topContent button:hover{
+    transition: 0.3s;
+    color: #fff;
+    background-color: #282828;
+}
+
+#students, #courses, #administrators, #main-container, #admin-container {
+    max-height: 350px;
+    margin-top: 15px;
+    animation: fadeInUp;
+    animation-duration: 1s;
+    z-index: 999;
+    overflow: overlay;
+}
+
+.all-students, .all-courses, .all-administrators {
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.all-students ul, .all-courses ul, .all-administrators ul {
+    list-style-type: none;
+    display: inline-block;
+}
+.all-students li, .all-courses li, .all-administrators li{
+    margin-top: 10px;
+}
+
+.all-courses li img, .all-administrators .admin-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scaleX(1);
+    transition: 0.5s;
+    box-shadow: 5px 10px 18px #282828;
+}
+
+.all-courses li img:hover, .all-administrators .admin-avatar:hover{
+    transform: scaleX(1.2);
+    transition: 0.5s;
+}
+
+.all-students li img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    transform: scale(1);
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 5px 10px 18px #282828;
+
+}
+
+.all-students li img:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+.student-name, .student-phone, .administrator-name, .administrator-phone, .administrator-role, .administrator-email {
+    transition: 0.4s;
+    color: blanchedalmond;
+    transform: scaleX(1);
+    
+}
+
+.student-name:hover, .student-phone:hover, .administrator-name:hover, .administrator-phone:hover, .administrator-role:hover, .administrator-email:hover{
+    transition: 0.4s;
+    color: #fff;
+    transform: scaleX(1.1);
+}
+
+.addForm {
+    width: 100%;
+}
+
+.addForm .btn {
+    margin: 0 7px 0 7px;
+}
+
+.addForm h4 {
+    color: #fff;
+}
+
+.addForm input, .addForm textarea {
+    width: 90%;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 9px;
+    resize: vertical;
+    color: #282828;
+}
+
+.addForm label {
+    padding: 7px 7px 7px 0;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    transition: 0.4s;
+    transform: scale(1);
+}
+
+.col-25:hover{
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+
+.col-75 {
+    float: right;
+    width: 75%;
+    margin-top: 6px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#switch-container .addForm{
+    animation: fadeInUp;
+    animation-duration: 0.4s;
+}
+
+#main-container .row, #admin-container .row {
+    transition: 0.4s;
+    opacity: 0.8;
+    animation: fadeInUp;
+    animation-duration: 0.4s;
+    color: #fff;
+}
+
+#main-container .row:hover, #admin-container .row:hover{
+    transition: 0.3s;
+    border-radius: 25px;
+    opacity: 1;
+}
+
+#main-container .row p , #admin-container .row p{
+    transition: 0.5s;
+}
+
+#main-container .row p:hover , #admin-container .row p:hover{
+    background-color: #282828;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+
+#main-container .row img , #admin-container .row img{
+    border-radius: 50px;
+    width: 250px;
+}
+
+.course-student h4, .course-student li{
+    color: #fff;
+}
+
+#save-course {
+    margin-left: 15px;
+}
+
+#main-container ul , #admin-container ul{
+    list-style-type: none;
+}
+
+
+.row .add-user, .row .save-admin, .row .delete-admin, row. #add-administrator {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.all-students h4, .all-courses h4, .all-administrators h4 {
+    font-size: 14px;
+}
+
+.footer-distributed{
+	background-color: #73463D;
+	box-shadow: 0px 0px 100px 10px rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+    height: auto;
+	text-align: left;
+	font: bold 16px sans-serif;
+    display: flex;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+    background-color: #73463D;
+}
+
+.footer-distributed .footer-left{
+	width: 35%;
+    text-align: center;
+}
+
+.contactInfo {
+    list-style-type: none;
+    margin-top: 10px;
+    text-align: center;
+    padding: 0px;
+}
+
+.contactInfo li{
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    font: normal 24px 'Cookie', cursive;
+}
+
+.contactInfo a{
+    color: dimgray;
+    transition: 0.3s;
+}
+
+.contactInfo a:hover {
+    color: aliceblue;
+    transition: 0.3s;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 24px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed .footer-center{
+	width: 29%;
+    text-align: center;
+}
+
+.footer-distributed .footer-center img{
+    width: 180px;
+    height: 60px;
+    border-radius: 15px;
+    transform: scale(1);
+    transition: 0.4s;
+    margin-top: 13px;
+}
+
+.footer-distributed .footer-center img:hover {
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+
+.footer-distributed .footer-right{
+	width: 35%;
+    text-align: center;
+}
+
+.connectInfo {
+    list-style-type: none;
+    padding-right: 40px;
+}
+
+.connectInfo li {
+    width: 80px;
+    display: inline;
+}
+
+.connectInfo img{
+    width: 30px;
+    margin: 7px;
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+.connectInfo img:hover{
+    border-radius: 10px;
+    background-color: #EFB8AD;
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+
+.lowFooter{
+    width: 100%;
+    height: 40px;;
+    background-color: #282828;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.lowFooter p {
+    font-size: 15px;
+    color: black;
+    font-weight: 500;
+}
+
+
+
+/* Responsive */
+
+@media (max-width:1000px) {
+    .footer-distributed {
+        bottom: 17px;
+    }
+    
+    .footer-left h3, .footer-right h3 {
+        font-size: 15px;
+    }
+    
+    .contactInfo, .connectInfo, .footer-center {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:1000px) and (min-width:770px) {
+    
+    .all-students li, .all-courses li, .all-administrators li {
+        margin-right: 10px;
+    }
+    
+    .all-students li img, .all-courses li img, .all-administrators li img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .student-name, .student-phone {
+        font-size: 12px;
+    }
+    
+    #main-container label {
+        font-size: 10px;
+    }
+    
+    .btn {
+        padding: 2px 20px;
+        margin-left: 12px;
+    }
+    
+    .topContent .btn {
+        padding: 0px 10px;
+        margin-left: 10px;
+    }
+    
+    .topContent h3 {
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    #add-student , #add_course {
+        float: left;
+    }
+    
+}
+
+@media (max-width:880px) {
+    	.footer-distributed{
+            font: bold 14px sans-serif;
+        }
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right{
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contactInfo span {
+            margin-top: 10px;
+        }
+
+        .contactInfo li{
+            width: 8%;
+            margin: 1px;
+        }
+        #administrators, #students, #courses {
+            height: 300px;
+        }
+}
+
+
+@media (max-width:770px) {
+  
+    .col-25 {
+        width: 20%;
+    }
+
+    .col-75 {
+        width: 80%;
+    }
+    
+    #administrators, #students, #courses {
+        height: 280px;
+    }
+    
+    .connectInfo img {
+        width: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    
+    .col-25 {
+        width: 30%;
+    }
+    
+    .col-25 label {
+        font-size: 12px;
+    }
+    
+    .col-75 {
+        width: 70%;
+    }
+    
+    #add-student , #add_course {
+        float: left;
+    }
+    
+    .footer-distributed {
+        display: 
+    }
+    
+    #administrators {
+        height: 290px;
+    }
+}
+
+@media (max-width:560px) {
+    
+    .all-students li h4, .all-courses li h4 {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    
+    #main-container p {
+        font-size: 11px;
+    }
+    
+    #admin-container {
+        margin-top: 20px;
+    }
+    
+    #mainRow {
+        opacity: 0.95;
+    }
+    
+    #admin-container, #main-container {
+        position: absolute;
+        left: 20%;
+        background-color: cornflowerblue;
+        border-radius: 25px;
+        opacity: 1;
+        box-shadow: 0px 0px 100px 10px rgba(0, 0, 0, 0.12); 
+    }
+    #main-container .row, #admin-container .row {
+        opacity: 1;
+    }
+    
+    .topContent {
+        display: inline-block;
+    }
+    
+    #administrators, #students, #courses {
+        height: 250px;
+    }
+    
+}
+
+@media (max-width:460px) {
+    
+    .topContent h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width:400px) {
+    .col-75 {
+        width: 60%;
+    } 
+    .col-25 {
+        width: 40%;
+    }
+    
+    .topContent h3 {
+        font-size: 17px;
+    }
+    
+    .topContent .btn {
+        margin-right: 0px;
+    }
+    
+    .all-students .student-name, .all-students .student-phone {
+        font-size: 10px;
+    }
+    
+    .all-students img, .all-courses img {
+        width: 65px;
+        height: 65px;
+    }
+    
+    #admin-container img {
+        width: 150px;
+    }
+}
+
+@media (max-width:300px){
+    .row {
+        display: inline-block;
+    }
+    
+    .all-administrators li h4 {
+        font-size: 15px;
+    }
+}
+
+@media (max-height:700px) {
+    #mainRow {
+        z-index: -1;
+    }
+    
+}
+
+@media (max-height:650px) {
+    .footer-distributed {
+        position: fixed;
+    }
+    
+    #mainRow {
+        bottom: 0;
+    }
+}
